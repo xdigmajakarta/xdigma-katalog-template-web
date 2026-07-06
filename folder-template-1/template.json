@@ -1,0 +1,23 @@
+{
+  "id": "XD-TMP-001",
+  "order": 1,
+  "slug": "arunika-portfolio",
+  "name": "Arunika Portfolio",
+  "access": "free",
+  "price": 0,
+  "currency": "IDR",
+  "category": "portfolio",
+  "styles": ["bold", "editorial"],
+  "type": "landing-page",
+  "featured": true,
+  "status": "published",
+  "description": {
+    "id": "Portofolio personal yang percaya diri untuk desainer, developer, dan pekerja kreatif independen.",
+    "en": "A confident personal portfolio for designers, developers, and independent creatives."
+  },
+  "previewUrl": "./folder-template-1/index.html",
+  "thumbnail": "",
+  "accent": "#A894FF",
+  "sourceUrl": "./folder-template-1/index.html",
+  "purchaseUrl": ""
+}

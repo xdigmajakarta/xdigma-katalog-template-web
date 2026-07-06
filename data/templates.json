@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "templates": [
+    {
+      "id": "XD-TMP-001",
+      "order": 1,
+      "slug": "arunika-portfolio",
+      "name": "Arunika Portfolio",
+      "access": "free",
+      "price": 0,
+      "currency": "IDR",
+      "category": "portfolio",
+      "styles": [
+        "bold",
+        "editorial"
+      ],
+      "type": "landing-page",
+      "featured": true,
+      "status": "published",
+      "description": {
+        "id": "Portofolio personal yang percaya diri untuk desainer, developer, dan pekerja kreatif independen.",
+        "en": "A confident personal portfolio for designers, developers, and independent creatives."
+      },
+      "previewUrl": "./folder-template-1/index.html",
+      "thumbnail": "",
+      "accent": "#A894FF",
+      "sourceUrl": "./folder-template-1/index.html",
+      "purchaseUrl": ""
+    },
+    {
+      "id": "XD-TMP-002",
+      "order": 2,
+      "slug": "senja-coffee",
+      "name": "Senja Coffee",
+      "access": "paid",
+      "price": null,
+      "currency": "IDR",
+      "category": "food-beverage",
+      "styles": [
+        "warm",
+        "editorial"
+      ],
+      "type": "landing-page",
+      "featured": true,
+      "status": "published",
+      "description": {
+        "id": "Landing page hangat untuk kedai kopi, restoran, dan brand kuliner lokal.",
+        "en": "A warm landing page for coffee shops, restaurants, and local food brands."
+      },
+      "previewUrl": "./folder-template-2/index.html",
+      "thumbnail": "",
+      "accent": "#D58045",
+      "sourceUrl": "",
+      "purchaseUrl": "https://wa.me/628131770613?text=Halo%20Xdigma%2C%20saya%20tertarik%20dengan%20template%20Senja%20Coffee."
+    }
+  ]
+}

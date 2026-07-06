@@ -1,0 +1,14 @@
+{
+  "name": "xdigma-template-catalog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "new-template": "node scripts/new-template.mjs",
+    "build:catalog": "node scripts/build-catalog.mjs",
+    "check:catalog": "node scripts/build-catalog.mjs --check"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,36 @@
+name: Validate template catalog
+
+on:
+  pull_request:
+    paths:
+      - "**/template.json"
+      - "data/templates.json"
+      - "scripts/**"
+      - "index.html"
+      - "script.js"
+      - "style.css"
+      - "package.json"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Check generated catalog data
+        run: npm run check:catalog
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check script.js
+          node --check scripts/build-catalog.mjs
+          node --check scripts/new-template.mjs

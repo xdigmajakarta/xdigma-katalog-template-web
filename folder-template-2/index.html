@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Senja Coffee, template landing page hangat untuk kedai kopi."
+    />
+    <title>Senja Coffee — Kopi, Cerita, dan Suasana</title>
+    <style>
+      :root {
+        --ink: #28231e;
+        --cream: #f3eadb;
+        --paper: #fffaf1;
+        --brown: #9a5d36;
+        --orange: #d58045;
+        --muted: #74695f;
+        --line: rgba(65, 49, 37, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-width: 320px;
+        color: var(--ink);
+        background: var(--cream);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header,
+      .hero,
+      .features {
+        width: min(1160px, calc(100% - 40px));
+        margin-inline: auto;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 84px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .logo {
+        font-family: Georgia, serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+      }
+
+      .logo span {
+        color: var(--orange);
+      }
+
+      nav {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+
+      nav a {
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 650;
+      }
+
+      .nav-button {
+        padding: 10px 17px;
+        border-radius: 999px;
+        color: var(--paper);
+        background: var(--ink);
+      }
+
+      .hero {
+        display: grid;
+        align-items: center;
+        min-height: calc(100vh - 84px);
+        padding-block: 60px 80px;
+        grid-template-columns: 1fr 0.92fr;
+        gap: 7vw;
+      }
+
+      .eyebrow {
+        margin-bottom: 20px;
+        color: var(--brown);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 640px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3.5rem, 7.5vw, 7.2rem);
+        font-weight: 500;
+        letter-spacing: -0.07em;
+        line-height: 0.88;
+      }
+
+      h1 em {
+        color: var(--orange);
+        font-weight: 400;
+      }
+
+      .hero-copy > p:not(.eyebrow) {
+        max-width: 520px;
+        margin-top: 28px;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.75;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        min-height: 49px;
+        padding: 0 21px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 750;
+      }
+
+      .button--primary {
+        border-color: var(--brown);
+        color: var(--paper);
+        background: var(--brown);
+      }
+
+      .visual {
+        position: relative;
+        aspect-ratio: 0.92;
+        border-radius: 48% 48% 24px 24px;
+        background:
+          radial-gradient(circle at 52% 34%, rgba(255, 255, 255, 0.75), transparent 6%),
+          linear-gradient(145deg, #d39966, #75442c);
+        box-shadow: 0 40px 80px rgba(76, 48, 31, 0.23);
+      }
+
+      .visual::before {
+        position: absolute;
+        inset: 9%;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: inherit;
+        content: "";
+      }
+
+      .cup {
+        position: absolute;
+        top: 31%;
+        left: 50%;
+        width: 44%;
+        height: 32%;
+        border-radius: 10px 10px 45% 45%;
+        background: linear-gradient(100deg, #eee0ca, #fffaf0);
+        box-shadow:
+          0 34px 30px rgba(58, 34, 21, 0.23),
+          inset -18px 0 22px rgba(110, 73, 44, 0.12);
+        transform: translateX(-50%) rotate(-4deg);
+      }
+
+      .cup::before {
+        position: absolute;
+        top: -5%;
+        left: 3%;
+        width: 94%;
+        height: 18%;
+        border-radius: 50%;
+        background: #4e2b1b;
+        box-shadow: inset 0 7px 0 #2c1a11;
+        content: "";
+      }
+
+      .cup::after {
+        position: absolute;
+        top: 22%;
+        right: -24%;
+        width: 30%;
+        height: 48%;
+        border: 13px solid #f3e6d1;
+        border-left: 4px solid #f3e6d1;
+        border-radius: 0 50% 50% 0;
+        content: "";
+      }
+
+      .steam {
+        position: absolute;
+        top: -54%;
+        width: 20%;
+        height: 44%;
+        border-left: 4px solid rgba(255, 250, 241, 0.53);
+        border-radius: 50%;
+      }
+
+      .steam--one {
+        left: 29%;
+        transform: rotate(8deg);
+      }
+
+      .steam--two {
+        top: -47%;
+        left: 58%;
+        transform: rotate(-10deg);
+      }
+
+      .bean {
+        position: absolute;
+        width: 30px;
+        height: 21px;
+        border-radius: 50%;
+        background: #4c2a1d;
+        box-shadow: inset -5px -3px 0 rgba(0, 0, 0, 0.12);
+        transform: rotate(35deg);
+      }
+
+      .bean::after {
+        position: absolute;
+        top: 3px;
+        left: 14px;
+        width: 2px;
+        height: 15px;
+        border-radius: 50%;
+        background: rgba(216, 162, 116, 0.54);
+        content: "";
+      }
+
+      .bean--one {
+        top: 16%;
+        left: 15%;
+      }
+
+      .bean--two {
+        right: 11%;
+        bottom: 20%;
+        transform: rotate(-18deg);
+      }
+
+      .visual-note {
+        position: absolute;
+        right: -28px;
+        bottom: 10%;
+        max-width: 155px;
+        padding: 14px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        border-radius: 12px;
+        color: var(--paper);
+        background: rgba(56, 38, 28, 0.68);
+        font-family: Georgia, serif;
+        font-size: 0.82rem;
+        line-height: 1.4;
+        backdrop-filter: blur(10px);
+      }
+
+      .features {
+        display: grid;
+        padding: 45px 0 80px;
+        border-top: 1px solid var(--line);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+
+      .feature {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+      }
+
+      .feature__number {
+        display: grid;
+        flex: 0 0 36px;
+        width: 36px;
+        height: 36px;
+        border: 1px solid rgba(154, 93, 54, 0.24);
+        border-radius: 50%;
+        color: var(--brown);
+        font-family: Georgia, serif;
+        font-size: 0.8rem;
+        place-items: center;
+      }
+
+      .feature h2 {
+        margin-bottom: 5px;
+        font-family: Georgia, serif;
+        font-size: 1.05rem;
+      }
+
+      .feature p {
+        color: var(--muted);
+        font-size: 0.75rem;
+        line-height: 1.6;
+      }
+
+      .back-link {
+        position: fixed;
+        z-index: 10;
+        right: 18px;
+        bottom: 18px;
+        padding: 10px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+        background: rgba(255, 250, 241, 0.78);
+        font-size: 0.72rem;
+        backdrop-filter: blur(12px);
+      }
+
+      @media (max-width: 780px) {
+        nav a:not(.nav-button) {
+          display: none;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 55px;
+        }
+
+        .visual {
+          width: min(90%, 460px);
+          justify-self: center;
+        }
+
+        .features {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        header,
+        .hero,
+        .features {
+          width: calc(100% - 28px);
+        }
+
+        .actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .button {
+          justify-content: center;
+        }
+
+        .visual-note {
+          right: -6px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="#">Senja<span>.</span></a>
+      <nav aria-label="Navigasi utama">
+        <a href="#cerita">Cerita</a>
+        <a href="#menu">Menu</a>
+        <a href="#lokasi">Lokasi</a>
+        <a class="nav-button" href="mailto:reservasi@example.com">Reservasi</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="cerita">
+        <div class="hero-copy">
+          <p class="eyebrow">Dipanggang setiap pagi</p>
+          <h1>Kopi, cerita, dan <em>suasana.</em></h1>
+          <p>
+            Tempat pulang bagi penikmat kopi. Biji pilihan Nusantara kami
+            seduh perlahan agar setiap cangkir punya cerita yang layak dikenang.
+          </p>
+          <div class="actions">
+            <a class="button button--primary" href="#menu">Lihat menu</a>
+            <a class="button" href="#lokasi">Temukan kedai</a>
+          </div>
+        </div>
+
+        <div class="visual" aria-label="Ilustrasi secangkir kopi hangat">
+          <span class="bean bean--one"></span>
+          <span class="bean bean--two"></span>
+          <div class="cup">
+            <span class="steam steam--one"></span>
+            <span class="steam steam--two"></span>
+          </div>
+          <p class="visual-note">“Hangatnya singgah, nikmatnya tinggal.”</p>
+        </div>
+      </section>
+    </main>
+
+    <section class="features" id="menu" aria-label="Keunggulan Senja Coffee">
+      <article class="feature">
+        <span class="feature__number">01</span>
+        <div>
+          <h2>Biji Lokal</h2>
+          <p>Dipilih langsung dari kebun terbaik di seluruh Nusantara.</p>
+        </div>
+      </article>
+      <article class="feature">
+        <span class="feature__number">02</span>
+        <div>
+          <h2>Roast Segar</h2>
+          <p>Dipanggang dalam kelompok kecil untuk menjaga aroma dan rasa.</p>
+        </div>
+      </article>
+      <article class="feature" id="lokasi">
+        <span class="feature__number">03</span>
+        <div>
+          <h2>Ruang Nyaman</h2>
+          <p>Suasana tenang untuk bekerja, berbincang, atau sekadar jeda.</p>
+        </div>
+      </article>
+    </section>
+
+    <a class="back-link" href="../index.html">← Kembali ke katalog</a>
+  </body>
+</html>

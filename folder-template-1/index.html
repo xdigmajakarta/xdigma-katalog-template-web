@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Arunika, template portfolio modern untuk profesional kreatif."
+    />
+    <title>Arunika — Creative Portfolio</title>
+    <style>
+      :root {
+        --bg: #0c0d19;
+        --surface: #15172a;
+        --text: #f5f3ff;
+        --muted: #a5a3bb;
+        --accent: #a894ff;
+        --accent-dark: #7760e8;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-width: 320px;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 82% 25%, rgba(119, 96, 232, 0.22), transparent 30%),
+          var(--bg);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header,
+      main,
+      .project-strip {
+        width: min(1120px, calc(100% - 40px));
+        margin-inline: auto;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 86px;
+      }
+
+      .logo {
+        font-size: 1.15rem;
+        font-weight: 900;
+        letter-spacing: -0.06em;
+      }
+
+      .logo span {
+        color: var(--accent);
+      }
+
+      nav {
+        display: flex;
+        gap: 34px;
+        align-items: center;
+      }
+
+      nav a {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 650;
+      }
+
+      nav a:hover {
+        color: var(--text);
+      }
+
+      .nav-cta {
+        padding: 10px 16px;
+        border: 1px solid rgba(168, 148, 255, 0.38);
+        border-radius: 99px;
+        color: var(--accent);
+      }
+
+      .hero {
+        display: grid;
+        align-items: center;
+        min-height: calc(100vh - 86px);
+        padding: 70px 0 90px;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 70px;
+      }
+
+      .overline {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 24px;
+        color: var(--accent);
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .overline::before {
+        width: 30px;
+        height: 1px;
+        background: currentColor;
+        content: "";
+      }
+
+      h1 {
+        max-width: 660px;
+        font-size: clamp(3.4rem, 7vw, 6.7rem);
+        font-weight: 760;
+        letter-spacing: -0.075em;
+        line-height: 0.9;
+      }
+
+      h1 em {
+        color: var(--accent);
+        font-family: Georgia, serif;
+        font-weight: 400;
+      }
+
+      .hero-copy > p {
+        max-width: 540px;
+        margin-top: 30px;
+        color: var(--muted);
+        font-size: 1.04rem;
+        line-height: 1.75;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 36px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+        padding: 0 22px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 12px;
+        font-size: 0.82rem;
+        font-weight: 750;
+      }
+
+      .button--primary {
+        border-color: var(--accent);
+        color: #11111c;
+        background: var(--accent);
+      }
+
+      .button--ghost:hover {
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .portrait {
+        position: relative;
+        width: min(100%, 400px);
+        aspect-ratio: 0.78;
+        justify-self: end;
+      }
+
+      .portrait__frame {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        border: 1px solid rgba(168, 148, 255, 0.27);
+        border-radius: 220px 220px 25px 25px;
+        background:
+          repeating-linear-gradient(
+            90deg,
+            transparent 0 35px,
+            rgba(255, 255, 255, 0.025) 36px
+          ),
+          linear-gradient(145deg, #312b57, #17182b);
+      }
+
+      .portrait__head {
+        position: absolute;
+        top: 22%;
+        left: 50%;
+        width: 31%;
+        aspect-ratio: 0.83;
+        border-radius: 50% 50% 46% 46%;
+        background: linear-gradient(145deg, #d4a982, #9b6e55);
+        box-shadow: 0 -18px 0 -4px #17131c;
+        transform: translateX(-50%);
+      }
+
+      .portrait__body {
+        position: absolute;
+        right: 12%;
+        bottom: -8%;
+        left: 12%;
+        height: 56%;
+        border-radius: 50% 50% 0 0;
+        background: linear-gradient(135deg, var(--accent-dark), #423579);
+      }
+
+      .portrait__orbit {
+        position: absolute;
+        right: -22px;
+        bottom: 17%;
+        display: grid;
+        width: 86px;
+        height: 86px;
+        border: 1px solid rgba(168, 148, 255, 0.4);
+        border-radius: 50%;
+        color: var(--accent);
+        background: rgba(12, 13, 25, 0.78);
+        font-size: 1.5rem;
+        backdrop-filter: blur(10px);
+        place-items: center;
+      }
+
+      .portrait__tag {
+        position: absolute;
+        top: 18%;
+        left: -32px;
+        padding: 12px 17px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 11px;
+        color: var(--muted);
+        background: rgba(21, 23, 42, 0.82);
+        font-size: 0.72rem;
+        backdrop-filter: blur(10px);
+      }
+
+      .portrait__tag strong {
+        display: block;
+        color: var(--text);
+        font-size: 0.94rem;
+      }
+
+      .project-strip {
+        display: grid;
+        padding: 42px 0 80px;
+        border-top: 1px solid rgba(255, 255, 255, 0.09);
+        grid-template-columns: 1fr repeat(3, 1.2fr);
+        gap: 24px;
+      }
+
+      .project-strip > p {
+        color: var(--muted);
+        font-size: 0.76rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .project {
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.025);
+      }
+
+      .project span {
+        color: var(--accent);
+        font-size: 0.68rem;
+      }
+
+      .project h2 {
+        margin-top: 5px;
+        font-size: 1rem;
+      }
+
+      .back-link {
+        position: fixed;
+        z-index: 10;
+        right: 18px;
+        bottom: 18px;
+        padding: 10px 14px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        color: var(--muted);
+        background: rgba(12, 13, 25, 0.8);
+        font-size: 0.72rem;
+        backdrop-filter: blur(12px);
+      }
+
+      @media (max-width: 760px) {
+        nav a:not(.nav-cta) {
+          display: none;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 55px;
+        }
+
+        .portrait {
+          width: min(90%, 390px);
+          justify-self: center;
+        }
+
+        .project-strip {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        header,
+        main,
+        .project-strip {
+          width: calc(100% - 28px);
+        }
+
+        .hero {
+          padding-top: 45px;
+        }
+
+        .actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .portrait__tag {
+          left: -6px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="#">ARUNIKA<span>.</span></a>
+      <nav aria-label="Navigasi utama">
+        <a href="#about">Tentang</a>
+        <a href="#projects">Karya</a>
+        <a class="nav-cta" href="mailto:halo@example.com">Mari bicara</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="about">
+        <div class="hero-copy">
+          <p class="overline">Creative designer</p>
+          <h1>Ide berani, dibuat lebih <em>berarti.</em></h1>
+          <p>
+            Saya Arunika, desainer digital yang mengubah gagasan menjadi
+            pengalaman visual yang jernih, manusiawi, dan menyenangkan.
+          </p>
+          <div class="actions">
+            <a class="button button--primary" href="#projects">Lihat karya</a>
+            <a class="button button--ghost" href="mailto:halo@example.com">Hubungi saya</a>
+          </div>
+        </div>
+
+        <div class="portrait" aria-label="Ilustrasi portrait Arunika">
+          <div class="portrait__frame">
+            <div class="portrait__head"></div>
+            <div class="portrait__body"></div>
+          </div>
+          <div class="portrait__tag">
+            Pengalaman
+            <strong>5+ Tahun</strong>
+          </div>
+          <div class="portrait__orbit" aria-hidden="true">✦</div>
+        </div>
+      </section>
+    </main>
+
+    <section class="project-strip" id="projects" aria-label="Karya pilihan">
+      <p>Karya pilihan</p>
+      <article class="project">
+        <span>Brand Identity</span>
+        <h2>Nusa Botanica</h2>
+      </article>
+      <article class="project">
+        <span>Digital Product</span>
+        <h2>Ruang Finance</h2>
+      </article>
+      <article class="project">
+        <span>Art Direction</span>
+        <h2>Sora Studio</h2>
+      </article>
+    </section>
+
+    <a class="back-link" href="../index.html">← Kembali ke katalog</a>
+  </body>
+</html>
