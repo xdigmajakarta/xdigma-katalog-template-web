@@ -1,22 +1,22 @@
 const translations = {
   en: {
     meta: {
-      title: "Xdigma Templates — Website Template Catalog",
+      title: "Xdigma Designs — Website Design Catalog",
       description:
-        "A curated collection of ready-to-customize website templates by Xdigma Creative Studio.",
+        "A curated collection of ready-to-customize website design directions by Xdigma Creative Studio.",
     },
     a11y: {
-      skip: "Skip to catalog",
-      home: "Xdigma Templates, back to top",
+      skip: "Skip to design catalog",
+      home: "Xdigma Designs, back to top",
       navigation: "Main navigation",
       language: "Choose language",
       explore: "Explore the catalog",
-      categories: "Available template categories",
+      categories: "Available design categories",
       previewArunika: "Open live preview of Arunika Portfolio",
       previewSenja: "Open live preview of Senja Coffee",
-      featuresArunika: "Arunika template features",
-      featuresSenja: "Senja template features",
-      accessFilter: "Filter by access",
+      featuresArunika: "Arunika design features",
+      featuresSenja: "Senja design features",
+      accessFilter: "Filter by type",
       top: "Back to top",
     },
     nav: {
@@ -30,9 +30,9 @@ const translations = {
       top: "Top",
     },
     hero: {
-      meta: "Website template catalog",
+      meta: "Website design catalog",
       kicker: "Your business is running. Let's make sure it looks ready.",
-      title: "Templates built to make brands <span>look ready.</span>",
+      title: "Design directions built to make brands <span>look ready.</span>",
       description:
         "Good design should move your business forward—not slow you down. Start with a solid website, then make it unmistakably yours.",
       view: "View<br>catalog",
@@ -44,19 +44,19 @@ const translations = {
       customizable: "Ready to customize",
     },
     catalog: {
-      label: "Selected templates",
+      label: "Selected designs",
       eyebrow: "Built for a strong first impression",
-      title: "Pick a solid starting point.",
+      title: "Pick a solid design direction.",
       description:
         "Preview the live experience. When one feels right, talk to us and we'll help adapt the copy, color, and details to your brand.",
     },
     catalogAll: {
       eyebrow: "Full collection",
-      title: "Explore all templates.",
-      countLabel: "templates available",
+      title: "Explore all designs.",
+      countLabel: "designs available",
       searchLabel: "Search",
-      searchPlaceholder: "Search templates...",
-      accessLabel: "Access",
+      searchPlaceholder: "Search designs...",
+      accessLabel: "Type",
       all: "All",
       free: "Free",
       premium: "Premium",
@@ -66,7 +66,7 @@ const translations = {
       sortFeatured: "Featured first",
       sortNewest: "Newest",
       sortName: "Name A–Z",
-      emptyTitle: "No templates found.",
+      emptyTitle: "No designs found.",
       emptyDescription: "Try another search or reset the filters.",
       reset: "Reset filters",
       loadMore: "Load 12 more",
@@ -77,8 +77,7 @@ const translations = {
       premium: "Premium",
       priceOnRequest: "Ask for price",
       preview: "Live preview",
-      source: "Source code",
-      buy: "Get template",
+      choose: "Choose this design",
       previewOf: "Preview of",
     },
     categories: {
@@ -109,12 +108,12 @@ const translations = {
     },
     actions: {
       preview: "Live preview",
-      get: "Get this template",
+      choose: "Choose this design",
     },
     services: {
-      label: "Beyond the template",
+      label: "Beyond the starter design",
       eyebrow: "Need something more specific?",
-      title: "A template can start it. We can finish it.",
+      title: "A design can start it. We can finish it.",
       description:
         "Choose only what your brand needs. We'll tell you honestly if a simpler route makes more sense.",
       brand: {
@@ -146,30 +145,31 @@ const translations = {
       mainSite: "Main site",
     },
     whatsapp: {
-      general: "Hi Xdigma, I'm interested in your website templates.",
-      arunika: "Hi Xdigma, I'm interested in the Arunika Portfolio template.",
-      senja: "Hi Xdigma, I'm interested in the Senja Coffee template.",
-      contact: "Hi Xdigma, I'd like to talk about a website template.",
+      general: "Hi Xdigma, I'm interested in your website design catalog.",
+      arunika: "Hi Xdigma, I'm interested in the Arunika Portfolio design.",
+      senja: "Hi Xdigma, I'm interested in the Senja Coffee design.",
+      contact: "Hi Xdigma, I'd like to talk about a website design.",
+      designInterest: "Hi Xdigma, I'm interested in this website design:",
     },
   },
   id: {
     meta: {
-      title: "Xdigma Templates — Katalog Template Website",
+      title: "Xdigma Designs — Katalog Desain Website",
       description:
-        "Koleksi template website pilihan dari Xdigma Creative Studio yang siap disesuaikan untuk brand Anda.",
+        "Koleksi arah desain website pilihan dari Xdigma Creative Studio yang siap disesuaikan untuk brand Anda.",
     },
     a11y: {
-      skip: "Lewati ke katalog",
-      home: "Xdigma Templates, kembali ke atas",
+      skip: "Lewati ke katalog desain",
+      home: "Xdigma Designs, kembali ke atas",
       navigation: "Navigasi utama",
       language: "Pilih bahasa",
       explore: "Jelajahi katalog",
-      categories: "Kategori template yang tersedia",
+      categories: "Kategori desain yang tersedia",
       previewArunika: "Buka preview langsung Arunika Portfolio",
       previewSenja: "Buka preview langsung Senja Coffee",
-      featuresArunika: "Fitur template Arunika",
-      featuresSenja: "Fitur template Senja",
-      accessFilter: "Filter berdasarkan akses",
+      featuresArunika: "Fitur desain Arunika",
+      featuresSenja: "Fitur desain Senja",
+      accessFilter: "Filter berdasarkan tipe",
       top: "Kembali ke atas",
     },
     nav: {
@@ -183,9 +183,9 @@ const translations = {
       top: "Atas",
     },
     hero: {
-      meta: "Katalog template website",
+      meta: "Katalog desain website",
       kicker: "Bisnismu sudah berjalan. Pastikan tampilannya juga siap.",
-      title: "Template yang membuat brand <span>tampil siap.</span>",
+      title: "Arah desain yang membuat brand <span>tampil siap.</span>",
       description:
         "Desain yang baik seharusnya mendorong bisnismu maju—bukan memperlambatnya. Mulai dengan website yang solid, lalu jadikan benar-benar milikmu.",
       view: "Lihat<br>katalog",
@@ -197,19 +197,19 @@ const translations = {
       customizable: "Siap disesuaikan",
     },
     catalog: {
-      label: "Template pilihan",
+      label: "Desain pilihan",
       eyebrow: "Dibuat untuk kesan pertama yang kuat",
-      title: "Mulai dari fondasi yang solid.",
+      title: "Pilih arah desain yang solid.",
       description:
         "Lihat pengalaman langsungnya. Jika ada yang terasa tepat, bicara dengan kami dan kami akan menyesuaikan tulisan, warna, serta detailnya untuk brand Anda.",
     },
     catalogAll: {
       eyebrow: "Koleksi lengkap",
-      title: "Jelajahi semua template.",
-      countLabel: "template tersedia",
+      title: "Jelajahi semua desain.",
+      countLabel: "desain tersedia",
       searchLabel: "Pencarian",
-      searchPlaceholder: "Cari template...",
-      accessLabel: "Akses",
+      searchPlaceholder: "Cari desain...",
+      accessLabel: "Tipe",
       all: "Semua",
       free: "Gratis",
       premium: "Premium",
@@ -219,7 +219,7 @@ const translations = {
       sortFeatured: "Featured lebih dulu",
       sortNewest: "Terbaru",
       sortName: "Nama A–Z",
-      emptyTitle: "Template tidak ditemukan.",
+      emptyTitle: "Desain tidak ditemukan.",
       emptyDescription: "Coba pencarian lain atau atur ulang filter.",
       reset: "Atur ulang filter",
       loadMore: "Muat 12 lagi",
@@ -230,8 +230,7 @@ const translations = {
       premium: "Premium",
       priceOnRequest: "Tanya harga",
       preview: "Lihat preview",
-      source: "Source code",
-      buy: "Dapatkan template",
+      choose: "Pilih desain ini",
       previewOf: "Preview",
     },
     categories: {
@@ -262,12 +261,12 @@ const translations = {
     },
     actions: {
       preview: "Lihat preview",
-      get: "Dapatkan template",
+      choose: "Pilih desain ini",
     },
     services: {
-      label: "Lebih dari template",
+      label: "Lebih dari desain awal",
       eyebrow: "Butuh sesuatu yang lebih spesifik?",
-      title: "Template bisa memulainya. Kami bisa menyelesaikannya.",
+      title: "Desain bisa memulainya. Kami bisa menyelesaikannya.",
       description:
         "Pilih hanya yang brand Anda butuhkan. Kami akan jujur jika ada cara yang lebih sederhana dan lebih masuk akal.",
       brand: {
@@ -302,12 +301,13 @@ const translations = {
       mainSite: "Situs utama",
     },
     whatsapp: {
-      general: "Halo Xdigma, saya tertarik dengan template website Xdigma.",
+      general: "Halo Xdigma, saya tertarik dengan katalog desain website Xdigma.",
       arunika:
-        "Halo Xdigma, saya tertarik dengan template Arunika Portfolio.",
-      senja: "Halo Xdigma, saya tertarik dengan template Senja Coffee.",
+        "Halo Xdigma, saya tertarik dengan desain Arunika Portfolio.",
+      senja: "Halo Xdigma, saya tertarik dengan desain Senja Coffee.",
       contact:
-        "Halo Xdigma, saya ingin berdiskusi tentang template website.",
+        "Halo Xdigma, saya ingin berdiskusi tentang desain website.",
+      designInterest: "Halo Xdigma, saya tertarik dengan desain website ini:",
     },
   },
 };
@@ -414,6 +414,11 @@ const createCatalogButton = (label, href, variant = "line") => {
   return link;
 };
 
+const createDefaultOrderUrl = (template) => {
+  const message = `${translations[activeLanguage].whatsapp.designInterest} ${template.name}`;
+  return `https://wa.me/628131770613?text=${encodeURIComponent(message)}`;
+};
+
 const createTemplateCard = (template) => {
   const dictionary = translations[activeLanguage];
   const article = createElement("article", "catalog-card");
@@ -485,27 +490,13 @@ const createTemplateCard = (template) => {
   actions.append(
     createCatalogButton(dictionary.card.preview, template.previewUrl, "line"),
   );
-
-  if (template.access === "free" && template.sourceUrl) {
-    const sourceButton = createCatalogButton(
-      dictionary.card.source,
-      template.sourceUrl,
+  actions.append(
+    createCatalogButton(
+      dictionary.card.choose,
+      template.orderUrl || createDefaultOrderUrl(template),
       "solid",
-    );
-
-    if (
-      template.sourceUrl.startsWith("./") &&
-      template.sourceUrl.endsWith(".html")
-    ) {
-      sourceButton.download = `${template.slug}.html`;
-    }
-
-    actions.append(sourceButton);
-  } else if (template.access === "paid" && template.purchaseUrl) {
-    actions.append(
-      createCatalogButton(dictionary.card.buy, template.purchaseUrl, "solid"),
-    );
-  }
+    ),
+  );
 
   footer.append(price, actions);
   body.append(metadata, title, description, tags, footer);

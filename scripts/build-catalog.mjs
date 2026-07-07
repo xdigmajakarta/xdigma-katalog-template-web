@@ -75,6 +75,7 @@ const validateManifest = async (template, manifestPath) => {
     "type",
     "status",
     "previewUrl",
+    "orderUrl",
   ];
 
   for (const field of requiredStrings) {
@@ -124,20 +125,7 @@ const validateManifest = async (template, manifestPath) => {
     errors,
   );
 
-  if (template.access === "free") {
-    assert(
-      typeof template.sourceUrl === "string" && template.sourceUrl.trim(),
-      `${location}: template gratis wajib memiliki sourceUrl.`,
-      errors,
-    );
-  }
-
   if (template.access === "paid") {
-    assert(
-      typeof template.purchaseUrl === "string" && template.purchaseUrl.trim(),
-      `${location}: template premium wajib memiliki purchaseUrl.`,
-      errors,
-    );
     assert(
       template.price === null ||
         (typeof template.price === "number" && template.price >= 0),
@@ -148,10 +136,6 @@ const validateManifest = async (template, manifestPath) => {
 
   await validateLocalFile(template.previewUrl, "Preview", manifestPath, errors);
   await validateLocalFile(template.thumbnail, "Thumbnail", manifestPath, errors);
-
-  if (template.access === "free") {
-    await validateLocalFile(template.sourceUrl, "Source", manifestPath, errors);
-  }
 
   return errors;
 };

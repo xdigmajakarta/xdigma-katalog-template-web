@@ -50,9 +50,9 @@ const highestId = Math.max(
   }),
 );
 
-console.log("\nTambah template baru ke Xdigma Catalog\n");
+console.log("\nTambah desain baru ke Xdigma Catalog\n");
 
-const name = await ask("Nama template");
+const name = await ask("Nama desain");
 const slug = await ask("Slug", makeSlug(name));
 const accessType = await choose("Akses", ["free", "paid"], "free");
 const category = await ask("Kategori", "portfolio");
@@ -72,22 +72,18 @@ const templateDirectory = path.join(root, relativeDirectory);
 const previewUrl = `./${relativeDirectory}/index.html`;
 
 let price = 0;
-let sourceUrl = previewUrl;
-let purchaseUrl = "";
 
-if (accessType === "free") {
-  sourceUrl = await ask("Link source/download", previewUrl);
-} else {
+if (accessType === "paid") {
   const priceInput = await ask("Harga IDR, kosongkan jika belum ditampilkan");
   price = priceInput ? Number(priceInput.replace(/\D/g, "")) : null;
-  sourceUrl = "";
-  purchaseUrl = await ask(
-    "Link pembelian",
-    `https://wa.me/628131770613?text=${encodeURIComponent(
-      `Halo Xdigma, saya tertarik dengan template ${name}.`,
-    )}`,
-  );
 }
+
+const orderUrl = await ask(
+  "Link order/WhatsApp",
+  `https://wa.me/628131770613?text=${encodeURIComponent(
+    `Halo Xdigma, saya tertarik dengan desain ${name}.`,
+  )}`,
+);
 
 const manifest = {
   id,
@@ -109,8 +105,7 @@ const manifest = {
   previewUrl,
   thumbnail: "",
   accent,
-  sourceUrl,
-  purchaseUrl,
+  orderUrl,
 };
 
 const starterHtml = `<!doctype html>
@@ -141,7 +136,7 @@ const starterHtml = `<!doctype html>
     <main>
       <p>${id}</p>
       <h1>${name}</h1>
-      <p>Ganti halaman starter ini dengan kode template final.</p>
+      <p>Ganti halaman starter ini dengan preview desain final.</p>
       <a href="../../index.html">Kembali ke katalog</a>
     </main>
   </body>
@@ -174,5 +169,5 @@ if (buildResult.status !== 0) {
   process.exit(buildResult.status ?? 1);
 }
 
-console.log(`\nSelesai. Template dibuat di ${relativeDirectory}/`);
+console.log(`\nSelesai. Desain dibuat di ${relativeDirectory}/`);
 console.log("Berikutnya: ganti index.html dan tambahkan thumbnail.webp.");
