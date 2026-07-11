@@ -1,0 +1,26 @@
+{
+  "id": "XD-TMP-002",
+  "order": 2,
+  "slug": "senja-coffee",
+  "name": "senja coffee",
+  "access": "free",
+  "price": 0,
+  "currency": "IDR",
+  "category": "food-and-beverage",
+  "styles": [
+    "warm",
+    "elegant",
+    "modern"
+  ],
+  "type": "landing-page",
+  "featured": false,
+  "status": "published",
+  "description": {
+    "id": "Gaya ini sangat kontras dengan website pertama yang berkesan \"mentah\" dan digital. Warm Editorial berfokus pada kenyamanan visual, kehangatan, dan kesan premium yang terinspirasi dari tata letak majalah cetak kelas atas",
+    "en": "This style stands in stark contrast to the first website, which had a \"raw,\" digital feel. \"Warm Editorial\" focuses on visual comfort, warmth, and a premium aesthetic inspired by the layout of high-end print magazines."
+  },
+  "previewUrl": "./templates/senja-coffee/index.html",
+  "thumbnail": "./templates/senja-coffee/thumbnail.png",
+  "accent": "#E13B32",
+  "orderUrl": "https://wa.me/628131770613?text=Halo%20Xdigma%2C%20saya%20tertarik%20dengan%20desain%20senja%20coffee."
+}

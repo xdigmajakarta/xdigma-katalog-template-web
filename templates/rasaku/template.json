@@ -1,0 +1,24 @@
+{
+  "id": "XD-TMP-003",
+  "order": 3,
+  "slug": "rasaku",
+  "name": "Rasaku",
+  "access": "paid",
+  "price": null,
+  "currency": "IDR",
+  "category": "food-beverage",
+  "styles": [
+    "modern"
+  ],
+  "type": "landing-page",
+  "featured": false,
+  "status": "published",
+  "description": {
+    "id": "template untuk kebutuhan pencarian tempat kuliner. website ini cocok untuk Influencer Media Kuliner",
+    "en": "A template for a culinary spot search service; this website is suitable for food influencers."
+  },
+  "previewUrl": "./templates/rasaku/index.html",
+  "thumbnail": "./templates/rasaku/thumbnail.png",
+  "accent": "#E13B32",
+  "orderUrl": "https://wa.me/628131770613?text=Halo%20Xdigma%2C%20saya%20tertarik%20dengan%20desain%20Rasaku."
+}

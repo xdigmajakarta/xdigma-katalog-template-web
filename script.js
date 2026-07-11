@@ -44,11 +44,13 @@ const translations = {
       customizable: "Ready to customize",
     },
     catalog: {
-      label: "Selected designs",
-      eyebrow: "Built for a strong first impression",
-      title: "Pick a solid design direction.",
+      label: "Latest designs",
+      eyebrow: "Newest additions",
+      title: "The last two designs added.",
       description:
-        "Preview the live experience. When one feels right, talk to us and we'll help adapt the copy, color, and details to your brand.",
+        "The two newest designs you add are highlighted here automatically. Preview them, then choose one as a starting point for your website.",
+      latestBadge: "Latest added",
+      featuresOf: "Features of",
     },
     catalogAll: {
       eyebrow: "Full collection",
@@ -197,11 +199,13 @@ const translations = {
       customizable: "Siap disesuaikan",
     },
     catalog: {
-      label: "Desain pilihan",
-      eyebrow: "Dibuat untuk kesan pertama yang kuat",
-      title: "Pilih arah desain yang solid.",
+      label: "2 desain terbaru",
+      eyebrow: "Baru ditambahkan",
+      title: "Dua desain terakhir yang masuk.",
       description:
-        "Lihat pengalaman langsungnya. Jika ada yang terasa tepat, bicara dengan kami dan kami akan menyesuaikan tulisan, warna, serta detailnya untuk brand Anda.",
+        "Dua desain terbaru yang Anda tambahkan akan otomatis tampil di sini. Lihat preview-nya, lalu pilih salah satu sebagai titik awal website.",
+      latestBadge: "Terakhir ditambahkan",
+      featuresOf: "Fitur",
     },
     catalogAll: {
       eyebrow: "Koleksi lengkap",
@@ -317,6 +321,7 @@ const getValue = (source, path) =>
 
 const languageButtons = document.querySelectorAll("[data-language]");
 const descriptionMeta = document.querySelector('meta[name="description"]');
+const latestDesignContainer = document.querySelector("[data-latest-design]");
 const templateGrid = document.querySelector("[data-template-grid]");
 const templateCount = document.querySelector("[data-template-count]");
 const catalogEmpty = document.querySelector("[data-catalog-empty]");
@@ -374,6 +379,16 @@ const createElement = (tagName, className, text) => {
   return element;
 };
 
+const createArrowIcon = () => {
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("aria-hidden", "true");
+  path.setAttribute("d", "M7 17 17 7M8 7h9v9");
+  svg.append(path);
+  return svg;
+};
+
 const humanize = (value) =>
   value
     .split("-")
@@ -405,6 +420,12 @@ const formatPrice = (template) => {
   }).format(template.price);
 };
 
+const getTemplateDescription = (template) =>
+  template.description?.[activeLanguage] ??
+  template.description?.en ??
+  template.description?.id ??
+  "";
+
 const createCatalogButton = (label, href, variant = "line") => {
   const link = createElement("a", `catalog-button catalog-button--${variant}`);
   link.href = href;
@@ -417,6 +438,123 @@ const createCatalogButton = (label, href, variant = "line") => {
 const createDefaultOrderUrl = (template) => {
   const message = `${translations[activeLanguage].whatsapp.designInterest} ${template.name}`;
   return `https://wa.me/628131770613?text=${encodeURIComponent(message)}`;
+};
+
+const createProductButton = (label, href, variant = "line", withIcon = false) => {
+  const link = createElement("a", `button button--${variant}`);
+  link.href = href;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.append(createElement("span", "", label));
+
+  if (withIcon) {
+    link.append(createArrowIcon());
+  }
+
+  return link;
+};
+
+const getLatestTemplates = (limit = 2) =>
+  [...catalogTemplates].sort(
+    (a, b) =>
+      (b.order ?? 0) - (a.order ?? 0) ||
+      b.name.localeCompare(a.name),
+  ).slice(0, limit);
+
+const createLatestDesignCard = (template) => {
+  const dictionary = translations[activeLanguage];
+  const article = createElement("article", "product-card");
+  const accent = /^#[0-9a-f]{6}$/i.test(template.accent ?? "")
+    ? template.accent
+    : "#E13B32";
+
+  const topline = createElement("div", "product-card__topline");
+  topline.append(
+    createElement("span", "", template.id),
+    createElement("span", "", getCategoryLabel(template.category)),
+  );
+
+  const preview = createElement("a", "product-preview product-preview--dynamic");
+  preview.href = template.previewUrl;
+  preview.target = "_blank";
+  preview.rel = "noopener noreferrer";
+  preview.setAttribute("aria-label", `${dictionary.card.previewOf} ${template.name}`);
+  preview.style.setProperty("--product-accent", accent);
+
+  const browser = createElement("div", "preview-browser");
+  const browserBar = createElement("div", "preview-browser__bar");
+  const dots = createElement("div");
+  dots.append(createElement("i"), createElement("i"), createElement("i"));
+  browserBar.append(dots, createElement("span", "", template.slug));
+  browser.append(browserBar);
+
+  if (template.thumbnail) {
+    const image = createElement("img", "product-preview__image");
+    image.src = template.thumbnail;
+    image.alt = `${dictionary.card.previewOf} ${template.name}`;
+    image.loading = "lazy";
+    browser.append(image);
+  } else {
+    const fallback = createElement("div", "latest-screen");
+    fallback.style.setProperty("--product-accent", accent);
+    fallback.append(
+      createElement("small", "", dictionary.catalog.latestBadge),
+      createElement("strong", "", template.name),
+      createElement("span", "", getCategoryLabel(template.category)),
+    );
+    browser.append(fallback);
+  }
+
+  const previewArrow = createElement("span", "preview-arrow");
+  previewArrow.append(createArrowIcon());
+  preview.append(browser, previewArrow);
+
+  const info = createElement("div", "product-card__info");
+  const heading = createElement("div");
+  heading.append(
+    createElement(
+      "p",
+      "product-number",
+      String(template.order ?? 1).padStart(2, "0"),
+    ),
+    createElement("h3", "", template.name),
+  );
+
+  const details = createElement("div", "product-card__details");
+  details.append(createElement("p", "", getTemplateDescription(template)));
+
+  const tags = createElement("ul", "tag-list");
+  tags.setAttribute("aria-label", `${dictionary.catalog.featuresOf} ${template.name}`);
+  [template.type, ...(template.styles ?? [])].slice(0, 4).forEach((tag) => {
+    tags.append(createElement("li", "", humanize(tag)));
+  });
+
+  const actions = createElement("div", "product-actions");
+  actions.append(
+    createProductButton(dictionary.actions.preview, template.previewUrl, "light", true),
+    createProductButton(
+      dictionary.actions.choose,
+      template.orderUrl || createDefaultOrderUrl(template),
+      "line",
+    ),
+  );
+
+  details.append(tags, actions);
+  info.append(heading, details);
+  article.append(topline, preview, info);
+  return article;
+};
+
+const renderLatestDesign = () => {
+  if (!latestDesignContainer || !catalogTemplates.length) return;
+
+  const latestTemplates = getLatestTemplates(2);
+  if (!latestTemplates.length) return;
+
+  latestDesignContainer.replaceChildren(
+    ...latestTemplates.map((template) => createLatestDesignCard(template)),
+  );
+  latestDesignContainer.setAttribute("aria-busy", "false");
 };
 
 const createTemplateCard = (template) => {
@@ -473,10 +611,7 @@ const createTemplateCard = (template) => {
   const description = createElement(
     "p",
     "catalog-card__description",
-    template.description?.[activeLanguage] ??
-      template.description?.en ??
-      template.description?.id ??
-      "",
+    getTemplateDescription(template),
   );
   const tags = createElement("ul", "catalog-card__tags");
 
@@ -679,6 +814,7 @@ const setLanguage = (language) => {
   });
 
   renderCategoryOptions();
+  renderLatestDesign();
   renderCatalog();
   storeLanguage(activeLanguage);
 };
@@ -694,6 +830,7 @@ const loadCatalog = async () => {
     catalogTemplates = Array.isArray(data.templates) ? data.templates : [];
     catalogLoaded = true;
     renderCategoryOptions();
+    renderLatestDesign();
     renderCatalog();
   } catch (error) {
     catalogLoadFailed = true;

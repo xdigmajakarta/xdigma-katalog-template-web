@@ -4,52 +4,79 @@
     {
       "id": "XD-TMP-001",
       "order": 1,
-      "slug": "arunika-portfolio",
-      "name": "Arunika Portfolio",
+      "slug": "ap",
+      "name": "AP",
       "access": "free",
       "price": 0,
       "currency": "IDR",
       "category": "portfolio",
       "styles": [
-        "bold",
-        "editorial"
+        "neo-brutalism",
+        "clean",
+        "contemporary",
+        "and-high-fashion-editorial-vibe"
       ],
       "type": "landing-page",
-      "featured": true,
+      "featured": false,
       "status": "published",
       "description": {
-        "id": "Portofolio personal yang percaya diri untuk desainer, developer, dan pekerja kreatif independen.",
-        "en": "A confident personal portfolio for designers, developers, and independent creatives."
+        "id": "Website ini berhasil mengomunikasikan identitas pemiliknya sebagai desainer \"dua dunia\" yang mahir di strategi, desain visual, hingga teknis coding, yang menjadikannya sangat bernilai di mata klien",
+        "en": "This website successfully communicates the owner's identity as a \"dual-world\" designer—proficient in everything from strategy and visual design to technical coding—making them highly valuable to clients."
       },
-      "previewUrl": "./template-arunika/index.html",
-      "thumbnail": "",
-      "accent": "#A894FF",
-      "orderUrl": "https://wa.me/628131770613?text=Halo%20Xdigma%2C%20saya%20tertarik%20dengan%20desain%20Arunika%20Portfolio."
+      "previewUrl": "./templates/ap/index.html",
+      "thumbnail": "./templates/ap/thumbnail.webp",
+      "accent": "#E13B32",
+      "orderUrl": "https://wa.me/628131770613?text=Halo%20Xdigma%2C%20saya%20tertarik%20dengan%20desain%20AP."
     },
     {
       "id": "XD-TMP-002",
       "order": 2,
       "slug": "senja-coffee",
-      "name": "Senja Coffee",
+      "name": "senja coffee",
+      "access": "free",
+      "price": 0,
+      "currency": "IDR",
+      "category": "food-and-beverage",
+      "styles": [
+        "warm",
+        "elegant",
+        "modern"
+      ],
+      "type": "landing-page",
+      "featured": false,
+      "status": "published",
+      "description": {
+        "id": "Gaya ini sangat kontras dengan website pertama yang berkesan \"mentah\" dan digital. Warm Editorial berfokus pada kenyamanan visual, kehangatan, dan kesan premium yang terinspirasi dari tata letak majalah cetak kelas atas",
+        "en": "This style stands in stark contrast to the first website, which had a \"raw,\" digital feel. \"Warm Editorial\" focuses on visual comfort, warmth, and a premium aesthetic inspired by the layout of high-end print magazines."
+      },
+      "previewUrl": "./templates/senja-coffee/index.html",
+      "thumbnail": "./templates/senja-coffee/thumbnail.png",
+      "accent": "#E13B32",
+      "orderUrl": "https://wa.me/628131770613?text=Halo%20Xdigma%2C%20saya%20tertarik%20dengan%20desain%20senja%20coffee."
+    },
+    {
+      "id": "XD-TMP-003",
+      "order": 3,
+      "slug": "rasaku",
+      "name": "Rasaku",
       "access": "paid",
       "price": null,
       "currency": "IDR",
       "category": "food-beverage",
       "styles": [
-        "warm",
-        "editorial"
+        "modern"
       ],
       "type": "landing-page",
-      "featured": true,
+      "featured": false,
       "status": "published",
       "description": {
-        "id": "Landing page hangat untuk kedai kopi, restoran, dan brand kuliner lokal.",
-        "en": "A warm landing page for coffee shops, restaurants, and local food brands."
+        "id": "template untuk kebutuhan pencarian tempat kuliner. website ini cocok untuk Influencer Media Kuliner",
+        "en": "A template for a culinary spot search service; this website is suitable for food influencers."
       },
-      "previewUrl": "./template-senja-coffee/index.html",
-      "thumbnail": "",
-      "accent": "#D58045",
-      "orderUrl": "https://wa.me/628131770613?text=Halo%20Xdigma%2C%20saya%20tertarik%20dengan%20desain%20Senja%20Coffee."
+      "previewUrl": "./templates/rasaku/index.html",
+      "thumbnail": "./templates/rasaku/thumbnail.png",
+      "accent": "#E13B32",
+      "orderUrl": "https://wa.me/628131770613?text=Halo%20Xdigma%2C%20saya%20tertarik%20dengan%20desain%20Rasaku."
     }
   ]
 }

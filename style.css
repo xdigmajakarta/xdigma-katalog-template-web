@@ -503,6 +503,16 @@ main,
     linear-gradient(145deg, #34261e, #181713 75%);
 }
 
+.product-preview--dynamic {
+  background:
+    radial-gradient(
+      circle at 78% 20%,
+      color-mix(in srgb, var(--product-accent, #e13b32) 35%, transparent),
+      transparent 30%
+    ),
+    linear-gradient(145deg, #181818, #0d0d0d 76%);
+}
+
 .preview-browser {
   position: relative;
   height: 100%;
@@ -514,6 +524,54 @@ main,
   background: #101018;
   box-shadow: 0 36px 80px rgba(0, 0, 0, 0.42);
   transition: transform 350ms ease;
+}
+
+.product-preview__image {
+  display: block;
+  width: 100%;
+  height: clamp(350px, 46vw, 590px);
+  object-fit: cover;
+  object-position: top center;
+}
+
+.latest-screen {
+  display: flex;
+  min-height: clamp(350px, 46vw, 590px);
+  padding: clamp(24px, 5vw, 76px);
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--product-accent, #e13b32) 22%, transparent),
+      transparent 42%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 42px,
+      rgba(255, 255, 255, 0.03) 43px
+    ),
+    #101010;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.latest-screen small,
+.latest-screen span {
+  color: var(--muted);
+  font-size: clamp(0.48rem, 0.8vw, 0.7rem);
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.latest-screen strong {
+  max-width: 720px;
+  margin: 14px 0;
+  color: var(--paper);
+  font-family: "Arial Black", Inter, sans-serif;
+  font-size: clamp(2.4rem, 7vw, 7rem);
+  letter-spacing: -0.07em;
+  line-height: 0.82;
+  text-transform: uppercase;
 }
 
 .product-preview:hover .preview-browser {

@@ -1,0 +1,27 @@
+{
+  "id": "XD-TMP-001",
+  "order": 1,
+  "slug": "ap",
+  "name": "AP",
+  "access": "free",
+  "price": 0,
+  "currency": "IDR",
+  "category": "portfolio",
+  "styles": [
+    "neo-brutalism",
+    "clean",
+    "contemporary",
+    "and-high-fashion-editorial-vibe"
+  ],
+  "type": "landing-page",
+  "featured": false,
+  "status": "published",
+  "description": {
+    "id": "Website ini berhasil mengomunikasikan identitas pemiliknya sebagai desainer \"dua dunia\" yang mahir di strategi, desain visual, hingga teknis coding, yang menjadikannya sangat bernilai di mata klien",
+    "en": "This website successfully communicates the owner's identity as a \"dual-world\" designer—proficient in everything from strategy and visual design to technical coding—making them highly valuable to clients."
+  },
+  "previewUrl": "./templates/ap/index.html",
+  "thumbnail": "./templates/ap/thumbnail.webp",
+  "accent": "#E13B32",
+  "orderUrl": "https://wa.me/628131770613?text=Halo%20Xdigma%2C%20saya%20tertarik%20dengan%20desain%20AP."
+}
