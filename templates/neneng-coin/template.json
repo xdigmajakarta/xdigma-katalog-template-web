@@ -1,0 +1,26 @@
+{
+  "id": "XD-TMP-004",
+  "order": 4,
+  "slug": "neneng-coin",
+  "name": "neneng coin",
+  "access": "free",
+  "price": 0,
+  "currency": "IDR",
+  "category": "paid-coin",
+  "styles": [
+    "bento-grid",
+    "minimalis",
+    "tech-aesthetic"
+  ],
+  "type": "multi-page",
+  "featured": false,
+  "status": "published",
+  "description": {
+    "id": "gaya ini sangat efektif untuk situs web Fintech, Gaming Top-up, atau Startup Teknologi karena memberikan kesan layanan yang cepat, mutakhir, profesional, sekaligus trendi.",
+    "en": "This style is very effective for Fintech, Gaming Top-up, or Tech Startup websites because it gives the impression of fast, reliable, professional, and trendy service."
+  },
+  "previewUrl": "./templates/neneng-coin/index.html",
+  "thumbnail": "./templates/neneng-coin/thumbnail.webp",
+  "accent": "#FBF8EE",
+  "orderUrl": "https://wa.me/628131770613?text=Halo%20Xdigma%2C%20saya%20tertarik%20dengan%20desain%20neneng%20coin."
+}

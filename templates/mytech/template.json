@@ -1,0 +1,25 @@
+{
+  "id": "XD-TMP-005",
+  "order": 5,
+  "slug": "mytech",
+  "name": "MYTECH",
+  "access": "free",
+  "price": 0,
+  "currency": "IDR",
+  "category": "company-profile",
+  "styles": [
+    "dark-futuristic",
+    "modern-tech-aesthetic"
+  ],
+  "type": "multi-page",
+  "featured": false,
+  "status": "published",
+  "description": {
+    "id": "Penggunaan skema warna dark mode sebagai fondasi utama website ini memberikan kesan yang premium, profesional, dan futuristik. Gaya ini sangat populer digunakan oleh agensi kreatif digital, perusahaan teknologi, atau platform SaaS",
+    "en": "The use of a dark mode color scheme as the main foundation of this website creates a premium, professional, and futuristic feel. This style is very popular among digital creative agencies, technology companies, and SaaS platforms."
+  },
+  "previewUrl": "./templates/mytech/index.html",
+  "thumbnail": "./templates/mytech/thumbnail.webp",
+  "accent": "#0A0F14",
+  "orderUrl": "https://wa.me/628131770613?text=Halo%20Xdigma%2C%20saya%20tertarik%20dengan%20desain%20MYTECH."
+}

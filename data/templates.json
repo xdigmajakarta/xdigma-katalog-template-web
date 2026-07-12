@@ -77,6 +77,57 @@
       "thumbnail": "./templates/rasaku/thumbnail.png",
       "accent": "#E13B32",
       "orderUrl": "https://wa.me/628131770613?text=Halo%20Xdigma%2C%20saya%20tertarik%20dengan%20desain%20Rasaku."
+    },
+    {
+      "id": "XD-TMP-004",
+      "order": 4,
+      "slug": "neneng-coin",
+      "name": "neneng coin",
+      "access": "free",
+      "price": 0,
+      "currency": "IDR",
+      "category": "paid-coin",
+      "styles": [
+        "bento-grid",
+        "minimalis",
+        "tech-aesthetic"
+      ],
+      "type": "multi-page",
+      "featured": false,
+      "status": "published",
+      "description": {
+        "id": "gaya ini sangat efektif untuk situs web Fintech, Gaming Top-up, atau Startup Teknologi karena memberikan kesan layanan yang cepat, mutakhir, profesional, sekaligus trendi.",
+        "en": "This style is very effective for Fintech, Gaming Top-up, or Tech Startup websites because it gives the impression of fast, reliable, professional, and trendy service."
+      },
+      "previewUrl": "./templates/neneng-coin/index.html",
+      "thumbnail": "./templates/neneng-coin/thumbnail.webp",
+      "accent": "#FBF8EE",
+      "orderUrl": "https://wa.me/628131770613?text=Halo%20Xdigma%2C%20saya%20tertarik%20dengan%20desain%20neneng%20coin."
+    },
+    {
+      "id": "XD-TMP-005",
+      "order": 5,
+      "slug": "mytech",
+      "name": "MYTECH",
+      "access": "free",
+      "price": 0,
+      "currency": "IDR",
+      "category": "company-profile",
+      "styles": [
+        "dark-futuristic",
+        "modern-tech-aesthetic"
+      ],
+      "type": "multi-page",
+      "featured": false,
+      "status": "published",
+      "description": {
+        "id": "Penggunaan skema warna dark mode sebagai fondasi utama website ini memberikan kesan yang premium, profesional, dan futuristik. Gaya ini sangat populer digunakan oleh agensi kreatif digital, perusahaan teknologi, atau platform SaaS",
+        "en": "The use of a dark mode color scheme as the main foundation of this website creates a premium, professional, and futuristic feel. This style is very popular among digital creative agencies, technology companies, and SaaS platforms."
+      },
+      "previewUrl": "./templates/mytech/index.html",
+      "thumbnail": "./templates/mytech/thumbnail.webp",
+      "accent": "#0A0F14",
+      "orderUrl": "https://wa.me/628131770613?text=Halo%20Xdigma%2C%20saya%20tertarik%20dengan%20desain%20MYTECH."
     }
   ]
 }
