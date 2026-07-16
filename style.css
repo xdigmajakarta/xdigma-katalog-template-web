@@ -1168,17 +1168,20 @@ main,
 .catalog-card__visual {
   position: relative;
   display: block;
-  aspect-ratio: 1.42;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   background: #141412;
 }
 
 .catalog-card__visual img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   transition: transform 350ms ease;
+}
+
+.catalog-card__visual--fallback {
+  aspect-ratio: 1.42;
 }
 
 .catalog-card:hover .catalog-card__visual img {

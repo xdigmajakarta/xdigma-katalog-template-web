@@ -579,10 +579,9 @@ const createTemplateCard = (template) => {
     image.src = template.thumbnail;
     image.alt = `${dictionary.card.previewOf} ${template.name}`;
     image.loading = "lazy";
-    image.width = 800;
-    image.height = 560;
     visual.append(image);
   } else {
+    visual.classList.add("catalog-card__visual--fallback");
     const fallback = createElement("div", "catalog-card__fallback");
     fallback.append(
       createElement("span", "", template.id),
